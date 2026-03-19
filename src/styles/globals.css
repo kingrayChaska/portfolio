@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts loaded via index.html ── */
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0c0b09;
+  color: #8a8070;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Grain overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: #0c0b09; }
+::-webkit-scrollbar-thumb { background: #576238; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #7a8a4e; }
+
+/* ── Selection ── */
+::selection { background: #F0EADC; color: #576238; }
+
+/* ── Section divider rule ── */
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #2a2820 0%, transparent 100%);
+}
+
+/* ── Experience tabs ── */
+.exp-tab {
+  border-left: 2px solid transparent;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+.exp-tab.active {
+  border-left-color: #7a8a4e;
+  color: #F0EADC;
+  background: rgba(87, 98, 56, 0.1);
+}
+.exp-tab:hover:not(.active) {
+  color: #F0EADC;
+  background: rgba(87, 98, 56, 0.06);
+  border-left-color: #576238;
+}
+
+/* ── Featured project image overlay ── */
+.fp-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(87, 98, 56, 0.2);
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+.fp-card:hover .fp-img-overlay {
+  opacity: 0;
+}
+
+/* ── Underline animation ── */
+.underline-anim {
+  position: relative;
+  display: inline-block;
+}
+.underline-anim::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #7a8a4e;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.underline-anim:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ── Project card top-border reveal ── */
+.project-card-border {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #576238, #7a8a4e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.group:hover .project-card-border {
+  transform: scaleX(1);
+}
+
+/* ── Cursor glow ── */
+.cursor-glow {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(87, 98, 56, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9997;
+  transition: opacity 0.3s ease;
+}

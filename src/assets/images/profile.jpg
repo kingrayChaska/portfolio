@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="320" viewBox="0 0 280 320">
+  <rect width="280" height="320" fill="#1a1814"/>
+  <circle cx="140" cy="120" r="60" fill="#2a2820"/>
+  <ellipse cx="140" cy="280" rx="100" ry="70" fill="#2a2820"/>
+  <text x="140" y="180" font-family="serif" font-size="72" fill="#576238" text-anchor="middle" opacity="0.4">F.O</text>
+</svg>
