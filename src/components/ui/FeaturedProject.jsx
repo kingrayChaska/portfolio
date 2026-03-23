@@ -1,21 +1,21 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { IconGithub, IconExternalLink } from '../icons'
-import ProjectMockup from './ProjectMockup'
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { IconGithub, IconExternalLink } from "../icons";
+import ProjectMockup from "./ProjectMockup";
 
 /**
  * Large alternating project card (xtmani style).
  * Even-indexed cards have image on left, odd on right.
  */
 export default function FeaturedProject({ project, reverse }) {
-  const ref    = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div
       ref={ref}
       className={`fp-card grid grid-cols-1 lg:grid-cols-2 gap-0 items-center relative ${
-        reverse ? 'lg:[direction:rtl]' : ''
+        reverse ? "lg:[direction:rtl]" : ""
       }`}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -24,16 +24,20 @@ export default function FeaturedProject({ project, reverse }) {
       {/* ── Mockup / image ── */}
       <div
         className="relative rounded overflow-hidden aspect-[16/10]"
-        style={{ background: '#1a1814' }}
+        style={{ background: "#1a1814" }}
       >
-        <ProjectMockup title={project.title} url={project.live} />
+        <ProjectMockup
+          title={project.title}
+          url={project.live}
+          image={project.image}
+        />
         <div className="fp-img-overlay" />
       </div>
 
       {/* ── Text content ── */}
       <div
         className={`relative z-10 pt-6 lg:pt-0 ${
-          reverse ? 'lg:[direction:ltr] lg:pr-12' : 'lg:pl-12'
+          reverse ? "lg:[direction:ltr] lg:pr-12" : "lg:pl-12"
         }`}
       >
         <p className="font-mono text-[13px] text-moss-light mb-2 tracking-wider">
@@ -59,8 +63,8 @@ export default function FeaturedProject({ project, reverse }) {
         <div
           className="rounded p-5 mb-5 font-sans text-[15px] text-egg-dim leading-[1.75]"
           style={{
-            background: '#1a1814',
-            border: '1px solid rgba(240,234,220,0.04)',
+            background: "#1a1814",
+            border: "1px solid rgba(240,234,220,0.04)",
           }}
         >
           {project.desc}
@@ -68,7 +72,7 @@ export default function FeaturedProject({ project, reverse }) {
 
         {/* Tech stack */}
         <ul className="flex flex-wrap gap-3 mb-5">
-          {project.tech.map(t => (
+          {project.tech.map((t) => (
             <li key={t} className="font-mono text-[13px] text-egg-dim">
               {t}
             </li>
@@ -102,5 +106,5 @@ export default function FeaturedProject({ project, reverse }) {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

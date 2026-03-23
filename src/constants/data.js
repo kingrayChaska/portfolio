@@ -76,14 +76,18 @@ export const FEATURED_PROJECTS = [
     ],
     github: "https://github.com/kingrayChaska",
     live: "https://sallyai2.netlify.app",
+    // Add your screenshot: /public/images/sally-ai.png  →  image: "/images/sally-ai.png"
+    image: "sally.jpg",
   },
   {
     title: "Admin Dashboard",
     overline: "Featured Project",
     desc: "A responsive admin panel for managing users, content, analytics, and settings with real-time charts and data visualization. Handled full-stack development, authentication, and intuitive layouts with secure Supabase backend operations.",
     tech: ["Next.js", "TypeScript", "ShadCN UI", "Supabase", "React Icons"],
-    github: "https://github.com/kingrayChaska",
-    live: null,
+    github: "https://github.com/kingrayChaska/dash-dashbooard.git",
+    live: "dash-dashbooard.vercel.app",
+    // Add your screenshot: /public/images/admin-dashboard.png  →  image: "/images/admin-dashboard.png"
+    image: "Dash.jpg",
   },
   {
     title: "Podcaster",
@@ -98,6 +102,18 @@ export const FEATURED_PROJECTS = [
     ],
     github: "https://github.com/kingrayChaska",
     live: null,
+    // Add your screenshot: /public/images/podcaster.png  →  image: "/images/podcaster.png"
+    image: "recieptify.jpg",
+  },
+  {
+    title: "Receiptify",
+    overline: "Solo Project",
+    desc: "A web app that uses OpenAI and YouTube APIs to generate personalized courses on any topic with curated video recommendations. Contributed to frontend development, API integrations, and UI/UX design for a responsive experience.",
+    tech: ["Next.js", "Tailwind CSS", "React Icons", "JavaScript"],
+    github: "https://github.com/kingrayChaska/recieptify.git",
+    live: "https://recieptify-i.vercel.app/",
+    // Add your screenshot: /public/images/receiptify.png  →  image: "/images/receiptify.png"
+    image: "recieptify.jpg",
   },
 ];
 

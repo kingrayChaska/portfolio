@@ -1,15 +1,12 @@
-import SectionHeading  from '../ui/SectionHeading'
-import FadeIn          from '../ui/FadeIn'
-import FeaturedProject from '../ui/FeaturedProject'
-import ProjectCard     from '../ui/ProjectCard'
-import { FEATURED_PROJECTS, OTHER_PROJECTS } from '../../constants/data'
+import SectionHeading from "../ui/SectionHeading";
+import FadeIn from "../ui/FadeIn";
+import FeaturedProject from "../ui/FeaturedProject";
+import ProjectCard from "../ui/ProjectCard";
+import { FEATURED_PROJECTS, OTHER_PROJECTS } from "../../constants/data";
 
 export default function Work() {
   return (
-    <section
-      id="work"
-      className="py-28 max-w-5xl mx-auto px-6 md:px-24"
-    >
+    <section id="work" className="py-28 max-w-5xl mx-auto px-6 md:px-24">
       <SectionHeading num="03." title="Some Things I've Built" />
 
       {/* ── Featured projects ── */}
@@ -39,5 +36,5 @@ export default function Work() {
         ))}
       </div>
     </section>
-  )
+  );
 }
