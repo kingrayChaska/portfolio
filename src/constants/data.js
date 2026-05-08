@@ -85,7 +85,7 @@ export const FEATURED_PROJECTS = [
     desc: "A responsive admin panel for managing users, content, analytics, and settings with real-time charts and data visualization. Handled full-stack development, authentication, and intuitive layouts with secure Supabase backend operations.",
     tech: ["Next.js", "TypeScript", "ShadCN UI", "Supabase", "React Icons"],
     github: "https://github.com/kingrayChaska/dash-dashbooard.git",
-    live: "dash-dashbooard.vercel.app",
+    live: "https://dash-dashbooard.vercel.app/",
     // Add your screenshot: /public/images/admin-dashboard.png  →  image: "/images/admin-dashboard.png"
     image: "Dash.jpg",
   },
