@@ -89,6 +89,17 @@ export const FEATURED_PROJECTS = [
     // Add your screenshot: /public/images/admin-dashboard.png  →  image: "/images/admin-dashboard.png"
     image: "Dash.jpg",
   },
+
+  {
+    title: "Receiptify",
+    overline: "Solo Project",
+    desc: "A web app that uses OpenAI and YouTube APIs to generate personalized courses on any topic with curated video recommendations. Contributed to frontend development, API integrations, and UI/UX design for a responsive experience.",
+    tech: ["Next.js", "Tailwind CSS", "React Icons", "JavaScript"],
+    github: "https://github.com/kingrayChaska/recieptify.git",
+    live: "https://recieptify-i.vercel.app/",
+    // Add your screenshot: /public/images/receiptify.png  →  image: "/images/receiptify.png"
+    image: "recieptify.jpg",
+  },
   {
     title: "Podcaster",
     overline: "Featured Project",
@@ -103,16 +114,6 @@ export const FEATURED_PROJECTS = [
     github: "https://github.com/kingrayChaska",
     live: null,
     // Add your screenshot: /public/images/podcaster.png  →  image: "/images/podcaster.png"
-    image: "recieptify.jpg",
-  },
-  {
-    title: "Receiptify",
-    overline: "Solo Project",
-    desc: "A web app that uses OpenAI and YouTube APIs to generate personalized courses on any topic with curated video recommendations. Contributed to frontend development, API integrations, and UI/UX design for a responsive experience.",
-    tech: ["Next.js", "Tailwind CSS", "React Icons", "JavaScript"],
-    github: "https://github.com/kingrayChaska/recieptify.git",
-    live: "https://recieptify-i.vercel.app/",
-    // Add your screenshot: /public/images/receiptify.png  →  image: "/images/receiptify.png"
     image: "recieptify.jpg",
   },
 ];
