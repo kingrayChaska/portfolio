@@ -19,12 +19,9 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
   return (
@@ -40,27 +37,28 @@ export default function Navbar() {
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
           borderBottom: "1px solid var(--border-eggshell)",
-          boxShadow: scrolled ? "0 10px 30px rgba(0,0,0,0.5)" : "none",
+          boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.12)" : "none",
         }}
       >
         {/* Logo */}
-        <a>
-          <img className="w-14" src="/chaska-logo.png" />
+        <a href="#hero">
+          <img className="w-14" src="/chaska-logo.png" alt="logo" />
         </a>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-1">
-          {NAV_LINKS.map(({ label, href, num }) => {
+          {NAV_LINKS.map(({ label, href }) => {
             const id = href.slice(1);
+            const isActive = activeSection === id;
             return (
               <li key={href}>
                 <a
                   href={href}
-                  className={`font-mono text-[13px] px-3 py-2 rounded transition-colors duration-200 hover:text-eggshell ${
-                    activeSection === id ? "text-eggshell" : "text-egg-dim"
-                  }`}
+                  className="font-sans text-[14px] font-medium px-4 py-2 rounded transition-colors duration-200"
+                  style={{
+                    color: isActive ? "var(--moss-light)" : "var(--eggshell)",
+                  }}
                 >
-                  <span className="text-moss-light mr-1">{num}</span>
                   {label}
                 </a>
               </li>
@@ -69,87 +67,98 @@ export default function Navbar() {
           <li>
             <a
               href="/Fadogba_Oluwaseun_frontend_cv-1.pdf"
-              download="Fadogba_Oluwaseun_frontend_cv-1.pdf"
+              download
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-3 font-mono text-[13px] text-eggshell border border-moss rounded px-5 py-2 hover:bg-moss/20 transition-all duration-200"
+              className="ml-3 font-sans text-[13px] font-semibold tracking-wide px-5 py-2 rounded-sm transition-all duration-200"
+              style={{
+                color: "var(--eggshell)",
+                border: "1px solid var(--moss-light)",
+                background: "var(--overlay-moss-12)",
+              }}
             >
               Resume
             </a>
           </li>
         </ul>
 
-        {/* Theme toggle and Mobile hamburger */}
+        {/* Theme toggle + hamburger */}
         <div className="flex items-center gap-3">
           <button
-            className="text-eggshell p-1 hover:text-moss-light transition-colors duration-200"
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="p-1.5 rounded transition-colors duration-200"
+            style={{ color: "var(--eggshell)" }}
           >
-            {isDark ? <IconSun size={20} /> : <IconMoon size={20} />}
+            {isDark ? <IconSun size={19} /> : <IconMoon size={19} />}
           </button>
           <button
-            className="md:hidden text-eggshell p-1"
+            className="md:hidden p-1.5 rounded"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
+            style={{ color: "var(--eggshell)" }}
           >
-            <IconMenu size={24} />
+            <IconMenu size={22} />
           </button>
         </div>
       </motion.nav>
 
-      {/* ── Mobile menu ── */}
+      {/* ── Mobile drawer ── */}
       <AnimatePresence>
         {mobileOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               key="backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] bg-black/50"
+              className="fixed inset-0 z-[60] bg-black/40"
               onClick={() => setMobileOpen(false)}
             />
-
-            {/* Drawer */}
             <motion.div
               key="drawer"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed right-0 top-0 bottom-0 z-[70] w-[72vw] max-w-xs flex flex-col items-center justify-center gap-6 p-8"
+              transition={{ type: "tween", duration: 0.28 }}
+              className="fixed right-0 top-0 bottom-0 z-[70] w-[72vw] max-w-xs flex flex-col items-center justify-center gap-7 p-8"
               style={{
                 background: "var(--surface)",
-                borderLeft: "1px solid var(--border-dark)",
+                borderLeft: "1px solid var(--border-eggshell)",
               }}
             >
               <button
-                className="absolute top-6 right-6 text-egg-dim hover:text-eggshell transition-colors"
+                className="absolute top-6 right-6 transition-colors duration-200"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"
+                style={{ color: "var(--eggshell)" }}
               >
-                <IconClose size={24} />
+                <IconClose size={22} />
               </button>
 
-              {NAV_LINKS.map(({ label, href, num }) => (
+              {NAV_LINKS.map(({ label, href }) => (
                 <a
                   key={href}
                   href={href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-mono text-base text-egg-dim hover:text-eggshell transition-colors"
+                  className="font-sans text-[15px] font-medium transition-colors duration-200"
+                  style={{ color: "var(--eggshell)" }}
                 >
-                  <span className="text-moss-light">{num}</span> {label}
+                  {label}
                 </a>
               ))}
 
               <a
-                href="/resume.pdf"
+                href="/Fadogba_Oluwaseun_frontend_cv-1.pdf"
+                download
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 font-mono text-sm text-eggshell border border-moss-light rounded px-8 py-3 hover:bg-moss/20 transition-all"
+                className="mt-2 font-sans text-[13px] font-semibold tracking-wide px-8 py-3 rounded-sm transition-all duration-200"
+                style={{
+                  color: "var(--eggshell)",
+                  border: "1px solid var(--moss-light)",
+                  background: "var(--overlay-moss-12)",
+                }}
               >
                 Resume
               </a>

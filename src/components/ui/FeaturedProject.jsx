@@ -3,10 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { IconGithub, IconExternalLink } from "../icons";
 import ProjectMockup from "./ProjectMockup";
 
-/**
- * Large alternating project card (xtmani style).
- * Even-indexed cards have image on left, odd on right.
- */
 export default function FeaturedProject({ project, reverse }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -21,36 +17,35 @@ export default function FeaturedProject({ project, reverse }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* ── Mockup / image ── */}
+      {/* ── Image ── */}
       <div
-        className="relative rounded overflow-hidden aspect-[16/10]"
-        style={{ background: "#1a1814" }}
+        className="relative rounded-sm overflow-hidden aspect-[16/10]"
+        style={{ background: "var(--card)" }}
       >
-        <ProjectMockup
-          title={project.title}
-          url={project.live}
-          image={project.image}
-        />
+        <ProjectMockup title={project.title} url={project.live} image={project.image} />
         <div className="fp-img-overlay" />
       </div>
 
-      {/* ── Text content ── */}
+      {/* ── Text ── */}
       <div
-        className={`relative z-10 pt-6 lg:pt-0 ${
+        className={`relative z-10 pt-8 lg:pt-0 ${
           reverse ? "lg:[direction:ltr] lg:pr-12" : "lg:pl-12"
         }`}
       >
-        <p className="font-mono text-[13px] text-moss-light mb-2 tracking-wider">
+        <p className="font-mono text-[11px] text-moss-light mb-3 tracking-[2px] uppercase">
           {project.overline}
         </p>
 
-        <h3 className="font-display text-3xl text-eggshell font-semibold mb-5 tracking-tight">
+        <h3
+          className="font-display text-[28px] font-semibold mb-5 tracking-tight leading-tight"
+          style={{ color: "var(--eggshell)" }}
+        >
           {project.live ? (
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline-anim hover:text-eggshell transition-colors"
+              className="underline-anim hover:text-moss-light transition-colors duration-200"
             >
               {project.title}
             </a>
@@ -59,9 +54,8 @@ export default function FeaturedProject({ project, reverse }) {
           )}
         </h3>
 
-        {/* Description card */}
         <div
-          className="rounded p-5 mb-5 font-sans text-[15px] text-egg-dim leading-[1.75]"
+          className="rounded-sm p-5 mb-5 font-sans text-[14px] text-egg-dim leading-[1.8]"
           style={{
             background: "var(--card)",
             border: "1px solid var(--border-eggshell)",
@@ -70,16 +64,14 @@ export default function FeaturedProject({ project, reverse }) {
           {project.desc}
         </div>
 
-        {/* Tech stack */}
-        <ul className="flex flex-wrap gap-3 mb-5">
+        <ul className="flex flex-wrap gap-3 mb-6">
           {project.tech.map((t) => (
-            <li key={t} className="font-mono text-[13px] text-egg-dim">
+            <li key={t} className="font-mono text-[12px] text-moss-light tracking-wide">
               {t}
             </li>
           ))}
         </ul>
 
-        {/* Links */}
         <div className="flex gap-4 items-center">
           {project.github && (
             <a

@@ -22,10 +22,10 @@ export default function Work() {
 
       {/* ── Other projects ── */}
       <FadeIn className="text-center mb-12">
-        <h3 className="font-display text-2xl font-semibold text-eggshell tracking-tight">
+        <h3 className="font-display text-[26px] font-semibold tracking-tight" style={{ color: "var(--eggshell)" }}>
           Other Noteworthy Projects
         </h3>
-        <p className="font-mono text-[13px] text-moss-light mt-2 tracking-wide">
+        <p className="font-mono text-[11px] text-moss-light mt-2 tracking-[2px] uppercase">
           a collection
         </p>
       </FadeIn>

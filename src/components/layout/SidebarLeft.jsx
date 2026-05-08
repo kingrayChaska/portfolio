@@ -35,7 +35,7 @@ export default function SidebarLeft() {
       {/* Vertical line */}
       <div
         className="w-px h-24 mt-2"
-        style={{ background: 'linear-gradient(180deg, #576238, transparent)' }}
+        style={{ background: 'linear-gradient(180deg, var(--moss-light), transparent)' }}
       />
     </motion.div>
   )

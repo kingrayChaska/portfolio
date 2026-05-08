@@ -5,6 +5,7 @@
 /* ── Google Fonts loaded via index.html ── */
 
 /* ── Theme CSS Variables ── */
+:root,
 :root[data-theme="dark"] {
   --bg: #0c0b09;
   --surface: #141210;
@@ -18,7 +19,7 @@
   --text: #8a8070;
   --text-muted: #c8c0b0;
   --text-hover: #f0eadc;
-  --border-subtle: rgba(240, 234, 220, 0.04);
+  --border-subtle: rgba(240, 234, 220, 0.07);
   --overlay-moss: rgba(87, 98, 56, 0.2);
   --overlay-moss-light: rgba(87, 98, 56, 0.1);
   --overlay-moss-lighter: rgba(87, 98, 56, 0.06);
@@ -37,38 +38,39 @@
 }
 
 :root[data-theme="light"] {
-  --bg: #faf8f3;
-  --surface: #f0ede8;
-  --card: #e8e4dd;
-  --moss: #4a5c2a;
-  --moss-light: #5a6f38;
-  --eggshell: #0c0b09;
-  --egg-dim: #2a2520;
-  --slate: #1a1714;
-  --slate-light: #3a3530;
-  --text: #0c0b09;
-  --text-muted: #3a3530;
-  --text-hover: #0c0b09;
-  --border-subtle: rgba(12, 11, 9, 0.15);
-  --overlay-moss: rgba(74, 92, 42, 0.2);
-  --overlay-moss-light: rgba(74, 92, 42, 0.1);
-  --overlay-moss-lighter: rgba(74, 92, 42, 0.06);
-  --scrollbar-bg: #faf8f3;
-  --scrollbar-thumb: #5a6f38;
-  --scrollbar-thumb-hover: #4a5c2a;
-  --nav-bg-scrolled: rgba(240, 234, 220, 0.95);
-  --nav-bg: rgba(250, 248, 243, 0.8);
-  --border-eggshell: rgba(12, 11, 9, 0.12);
-  --border-dark: rgba(74, 92, 42, 0.25);
-  --border-dark-strong: rgba(74, 92, 42, 0.35);
-  --overlay-moss-12: rgba(74, 92, 42, 0.15);
-  --overlay-moss-22: rgba(74, 92, 42, 0.28);
-  --overlay-moss-25: rgba(74, 92, 42, 0.3);
-  --border-divider: #e8e4dd;
+  --bg: #f4f1ea;
+  --surface: #eae6dc;
+  --card: #e0dbd0;
+  --moss: #3a4d1f;
+  --moss-light: #4a5c2a;
+  --eggshell: #2c2a24;
+  --egg-dim: #4a4640;
+  --slate: #3a3830;
+  --slate-light: #5a5850;
+  --text: #2c2a24;
+  --text-muted: #4a4640;
+  --text-hover: #080600;
+  --border-subtle: rgba(8, 6, 0, 0.1);
+  --overlay-moss: rgba(58, 77, 31, 0.12);
+  --overlay-moss-light: rgba(58, 77, 31, 0.07);
+  --overlay-moss-lighter: rgba(58, 77, 31, 0.04);
+  --scrollbar-bg: #f4f1ea;
+  --scrollbar-thumb: #4a5c2a;
+  --scrollbar-thumb-hover: #3a4d1f;
+  --nav-bg-scrolled: rgba(176, 175, 174, 0.98);
+  --nav-bg: rgba(202, 200, 197, 0.9);
+  --border-eggshell: rgba(8, 6, 0, 0.14);
+  --border-dark: rgba(58, 77, 31, 0.28);
+  --border-dark-strong: rgba(58, 77, 31, 0.38);
+  --overlay-moss-12: rgba(58, 77, 31, 0.12);
+  --overlay-moss-22: rgba(58, 77, 31, 0.2);
+  --overlay-moss-25: rgba(58, 77, 31, 0.25);
+  --border-divider: #ccc8bc;
 }
 
 /* Default to dark mode */
-:root {
+:root,
+:root[data-theme="dark"] {
   color-scheme: dark;
 }
 
