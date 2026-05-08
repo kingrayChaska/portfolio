@@ -36,10 +36,10 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 transition-shadow duration-300"
         style={{
           height: 70,
-          background: scrolled ? "rgba(12,11,9,0.92)" : "rgba(12,11,9,0.6)",
+          background: scrolled ? "var(--nav-bg-scrolled)" : "var(--nav-bg)",
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
-          borderBottom: "1px solid rgba(240,234,220,0.04)",
+          borderBottom: "1px solid var(--border-eggshell)",
           boxShadow: scrolled ? "0 10px 30px rgba(0,0,0,0.5)" : "none",
         }}
       >
@@ -122,8 +122,8 @@ export default function Navbar() {
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed right-0 top-0 bottom-0 z-[70] w-[72vw] max-w-xs flex flex-col items-center justify-center gap-6 p-8"
               style={{
-                background: "#1a1814",
-                borderLeft: "1px solid rgba(87,98,56,0.2)",
+                background: "var(--surface)",
+                borderLeft: "1px solid var(--border-dark)",
               }}
             >
               <button

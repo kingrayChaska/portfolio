@@ -17,13 +17,13 @@ export default function Skills() {
             <div
               className="rounded p-6 h-full"
               style={{
-                background: '#141210',
-                border: '1px solid rgba(240,234,220,0.04)',
+                background: 'var(--surface)',
+                border: '1px solid var(--border-eggshell)',
               }}
             >
               <h3
                 className="font-display text-xl font-semibold text-eggshell mb-4 pb-3"
-                style={{ borderBottom: '1px solid #2a2820' }}
+                style={{ borderBottom: '1px solid var(--border-divider)' }}
               >
                 {category}
               </h3>
@@ -37,10 +37,10 @@ export default function Skills() {
                     whileHover={{ y: -2 }}
                     transition={{ delay: itemIdx * 0.04, duration: 0.3 }}
                     viewport={{ once: true }}
-                    className="font-mono text-[13px] text-eggshell/80 rounded px-3 py-1.5 cursor-default"
+                    className="font-mono text-[13px] text-egg-dim rounded px-3 py-1.5 cursor-default"
                     style={{
-                      background: 'rgba(87,98,56,0.16)',
-                      border: '1px solid rgba(87,98,56,0.28)',
+                      background: 'var(--overlay-moss)',
+                      border: '1px solid var(--border-dark-strong)',
                     }}
                   >
                     {item}

@@ -57,14 +57,14 @@ export default function Hero() {
         className="absolute top-1/3 left-0 w-[520px] h-[520px] rounded-full pointer-events-none -translate-x-1/2"
         style={{
           background:
-            "radial-gradient(circle, rgba(87,98,56,0.16) 0%, transparent 70%)",
+            "radial-gradient(circle, var(--overlay-moss) 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full pointer-events-none translate-x-1/3"
         style={{
           background:
-            "radial-gradient(circle, rgba(87,98,56,0.08) 0%, transparent 70%)",
+            "radial-gradient(circle, var(--overlay-moss-light) 0%, transparent 70%)",
         }}
       />
 
@@ -82,7 +82,7 @@ export default function Hero() {
             className="font-display text-eggshell leading-[1.05] tracking-[-2px] mb-3"
             style={{
               fontSize: "clamp(46px, 7.5vw, 88px)",
-              textShadow: "0 2px 40px rgba(87,98,56,0.25)",
+              textShadow: "0 2px 40px var(--overlay-moss-25)",
             }}
           >
             Fadogba Oluwaseun.
@@ -95,7 +95,7 @@ export default function Hero() {
             className="font-display text-slate leading-[1.1] tracking-[-1.5px] mb-8"
             style={{ fontSize: "clamp(28px, 5vw, 64px)" }}
           >
-            I <span className="text-eggshell/80 italic">{typed}</span>
+            I <span className="text-muted italic">{typed}</span>
             <span className="font-mono text-moss-light animate-blink">|</span>
           </h2>
         </Entrance>
@@ -104,7 +104,7 @@ export default function Hero() {
         <Entrance delay={0.9}>
           <p className="font-sans text-slate text-[17px] max-w-[500px] leading-relaxed mb-10">
             Frontend Developer with{" "}
-            <span className="text-eggshell/80 font-medium">3+ years</span> of
+            <span className="text-muted font-medium">3+ years</span> of
             experience helping product teams and digital creators build
             scalable, high-performing web applications that convert users and
             deliver real business results.
@@ -116,8 +116,8 @@ export default function Hero() {
           <div className="flex gap-4 flex-wrap">
             <a
               href="#work"
-              className="font-mono text-sm text-eggshell border border-moss-light rounded px-8 py-4 tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(87,98,56,0.22)]"
-              style={{ background: "rgba(87,98,56,0.12)" }}
+              className="font-mono text-sm text-eggshell border border-moss-light rounded px-8 py-4 tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_28px_var(--overlay-moss-22)]"
+              style={{ background: "var(--overlay-moss-12)" }}
             >
               View My Work
             </a>

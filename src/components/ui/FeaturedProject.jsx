@@ -63,8 +63,8 @@ export default function FeaturedProject({ project, reverse }) {
         <div
           className="rounded p-5 mb-5 font-sans text-[15px] text-egg-dim leading-[1.75]"
           style={{
-            background: "#1a1814",
-            border: "1px solid rgba(240,234,220,0.04)",
+            background: "var(--card)",
+            border: "1px solid var(--border-eggshell)",
           }}
         >
           {project.desc}

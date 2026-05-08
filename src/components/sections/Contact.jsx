@@ -21,7 +21,7 @@ export default function Contact() {
           className="font-display text-eggshell font-bold tracking-[-1.5px] mb-5"
           style={{
             fontSize: 'clamp(36px, 5vw, 64px)',
-            textShadow: '0 2px 30px rgba(87,98,56,0.2)',
+            textShadow: '0 2px 30px var(--overlay-moss-22)',
           }}
         >
           Get In Touch
@@ -39,10 +39,10 @@ export default function Contact() {
       <FadeIn delay={0.3}>
         <a
           href={`mailto:${EMAIL}`}
-          className="inline-block font-mono text-sm text-eggshell tracking-[2px] rounded px-12 py-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(87,98,56,0.22)]"
+          className="inline-block font-mono text-sm text-eggshell tracking-[2px] rounded px-12 py-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_var(--overlay-moss-22)]"
           style={{
             border: '1px solid #7a8a4e',
-            background: 'rgba(87,98,56,0.12)',
+            background: 'var(--overlay-moss-12)',
           }}
         >
           Say Hello

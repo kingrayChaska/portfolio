@@ -31,7 +31,7 @@ export default function Footer() {
 
       <p>
         Built by{" "}
-        <span className="text-eggshell/80">Fadogba Oluwaseun Raymond</span> ·{" "}
+        <span className="text-muted">Fadogba Oluwaseun Raymond</span> ·{" "}
         {new Date().getFullYear()}
       </p>
     </footer>

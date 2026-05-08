@@ -67,8 +67,8 @@ export default function ProjectMockup({ title, url, image }) {
                 key={i}
                 className="rounded h-14"
                 style={{
-                  background: "#1a1814",
-                  border: "1px solid rgba(87,98,56,0.12)",
+                  background: "var(--card)",
+                  border: "1px solid var(--overlay-moss-12)",
                 }}
               />
             ))}

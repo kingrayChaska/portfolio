@@ -23,8 +23,8 @@ export default function BackToTop() {
           transition={{ duration: 0.3 }}
           className="fixed bottom-8 right-8 z-50 flex items-center justify-center w-10 h-10 rounded text-eggshell transition-all duration-200 hover:-translate-y-1"
           style={{
-            background: 'rgba(87,98,56,0.3)',
-            border: '1px solid rgba(87,98,56,0.5)',
+            background: 'var(--overlay-moss)',
+            border: '1px solid var(--overlay-moss-light)',
           }}
         >
           <IconArrowUp size={16} />

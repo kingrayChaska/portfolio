@@ -16,14 +16,14 @@ export default function About() {
         >
           <p>
             Hello! I'm Oluwaseun — a{" "}
-            <span className="text-eggshell/80">Frontend Developer</span> and IT
+            <span className="text-muted">Frontend Developer</span> and IT
             Support Specialist based in Nigeria. I help product teams,
             companies, and digital creators attract and keep clients by creating
             the ideal experience their users love.
           </p>
           <p>
             I graduated with a{" "}
-            <span className="text-eggshell/80">
+            <span className="text-muted">
               B.Tech in Computer Science (Information Systems)
             </span>{" "}
             from Federal University of Technology Akure. Since then I've shipped
@@ -38,7 +38,7 @@ export default function About() {
           </p>
 
           <div className="pt-2">
-            <p className="font-mono text-[13px] text-eggshell/70 mb-3 tracking-wide">
+            <p className="font-mono text-[13px] text-muted mb-3 tracking-wide">
               Technologies I work with:
             </p>
             <ul className="grid grid-cols-2 gap-x-6 gap-y-2">

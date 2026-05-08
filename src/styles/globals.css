@@ -16,6 +16,7 @@
   --slate: #8a8070;
   --slate-light: #b0a898;
   --text: #8a8070;
+  --text-muted: #c8c0b0;
   --text-hover: #f0eadc;
   --border-subtle: rgba(240, 234, 220, 0.04);
   --overlay-moss: rgba(87, 98, 56, 0.2);
@@ -24,27 +25,46 @@
   --scrollbar-bg: #0c0b09;
   --scrollbar-thumb: #576238;
   --scrollbar-thumb-hover: #7a8a4e;
+  --nav-bg-scrolled: rgba(12, 11, 9, 0.92);
+  --nav-bg: rgba(12, 11, 9, 0.6);
+  --border-eggshell: rgba(240, 234, 220, 0.04);
+  --border-dark: rgba(87, 98, 56, 0.2);
+  --border-dark-strong: rgba(87, 98, 56, 0.28);
+  --overlay-moss-12: rgba(87, 98, 56, 0.12);
+  --overlay-moss-22: rgba(87, 98, 56, 0.22);
+  --overlay-moss-25: rgba(87, 98, 56, 0.25);
+  --border-divider: #2a2820;
 }
 
 :root[data-theme="light"] {
   --bg: #faf8f3;
   --surface: #f0ede8;
   --card: #e8e4dd;
-  --moss: #7a8a4e;
-  --moss-light: #9aaa6e;
+  --moss: #4a5c2a;
+  --moss-light: #5a6f38;
   --eggshell: #0c0b09;
-  --egg-dim: #2d2420;
-  --slate: #1a1410;
-  --slate-light: #2d2420;
-  --text: #1a1410;
+  --egg-dim: #2a2520;
+  --slate: #1a1714;
+  --slate-light: #3a3530;
+  --text: #0c0b09;
+  --text-muted: #3a3530;
   --text-hover: #0c0b09;
-  --border-subtle: rgba(12, 11, 9, 0.12);
-  --overlay-moss: rgba(122, 138, 78, 0.15);
-  --overlay-moss-light: rgba(122, 138, 78, 0.08);
-  --overlay-moss-lighter: rgba(122, 138, 78, 0.04);
+  --border-subtle: rgba(12, 11, 9, 0.15);
+  --overlay-moss: rgba(74, 92, 42, 0.2);
+  --overlay-moss-light: rgba(74, 92, 42, 0.1);
+  --overlay-moss-lighter: rgba(74, 92, 42, 0.06);
   --scrollbar-bg: #faf8f3;
-  --scrollbar-thumb: #9aaa6e;
-  --scrollbar-thumb-hover: #7a8a4e;
+  --scrollbar-thumb: #5a6f38;
+  --scrollbar-thumb-hover: #4a5c2a;
+  --nav-bg-scrolled: rgba(240, 234, 220, 0.95);
+  --nav-bg: rgba(250, 248, 243, 0.8);
+  --border-eggshell: rgba(12, 11, 9, 0.12);
+  --border-dark: rgba(74, 92, 42, 0.25);
+  --border-dark-strong: rgba(74, 92, 42, 0.35);
+  --overlay-moss-12: rgba(74, 92, 42, 0.15);
+  --overlay-moss-22: rgba(74, 92, 42, 0.28);
+  --overlay-moss-25: rgba(74, 92, 42, 0.3);
+  --border-divider: #e8e4dd;
 }
 
 /* Default to dark mode */

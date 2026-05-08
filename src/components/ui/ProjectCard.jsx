@@ -15,8 +15,8 @@ export default function ProjectCard({ project, index = 0 }) {
       ref={ref}
       className="group relative flex flex-col gap-5 p-7 rounded cursor-default transition-all duration-300 hover:-translate-y-2"
       style={{
-        background: '#1a1814',
-        border: '1px solid rgba(240,234,220,0.05)',
+        background: 'var(--card)',
+        border: '1px solid var(--border-eggshell)',
         overflow: 'hidden',
       }}
       initial={{ opacity: 0, y: 30 }}

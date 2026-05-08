@@ -4,15 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:           '#0c0b09',
-        surface:      '#141210',
-        card:         '#1a1814',
-        moss:         '#576238',
-        'moss-light': '#7a8a4e',
-        eggshell:     '#F0EADC',
-        'egg-dim':    '#b8ae9e',
-        slate:        '#8a8070',
-        'slate-light':'#b0a898',
+        bg:           'var(--bg)',
+        surface:      'var(--surface)',
+        card:         'var(--card)',
+        moss:         'var(--moss)',
+        'moss-light': 'var(--moss-light)',
+        eggshell:     'var(--eggshell)',
+        'egg-dim':    'var(--egg-dim)',
+        slate:        'var(--slate)',
+        'slate-light':'var(--slate-light)',
+        'text-muted':  'var(--text-muted)',
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'serif'],
