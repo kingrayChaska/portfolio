@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS } from "../../constants/data";
 import useActiveSection from "../../hooks/useActiveSection";
-import { IconMenu, IconClose } from "../icons";
+import { useTheme } from "../../hooks/useTheme";
+import { IconMenu, IconClose, IconSun, IconMoon } from "../icons";
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
 
@@ -10,6 +11,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const activeSection = useActiveSection(SECTION_IDS);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -77,14 +79,24 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden text-eggshell p-1"
-          onClick={() => setMobileOpen(true)}
-          aria-label="Open menu"
-        >
-          <IconMenu size={24} />
-        </button>
+        {/* Theme toggle and Mobile hamburger */}
+        <div className="flex items-center gap-3">
+          <button
+            className="text-eggshell p-1 hover:text-moss-light transition-colors duration-200"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {isDark ? <IconSun size={20} /> : <IconMoon size={20} />}
+          </button>
+          <button
+            className="md:hidden text-eggshell p-1"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <IconMenu size={24} />
+          </button>
+        </div>
       </motion.nav>
 
       {/* ── Mobile menu ── */}

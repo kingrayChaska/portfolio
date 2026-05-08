@@ -4,22 +4,83 @@
 
 /* ── Google Fonts loaded via index.html ── */
 
-/* ── Base ── */
-*, *::before, *::after { box-sizing: border-box; }
+/* ── Theme CSS Variables ── */
+:root[data-theme="dark"] {
+  --bg: #0c0b09;
+  --surface: #141210;
+  --card: #1a1814;
+  --moss: #576238;
+  --moss-light: #7a8a4e;
+  --eggshell: #f0eadc;
+  --egg-dim: #b8ae9e;
+  --slate: #8a8070;
+  --slate-light: #b0a898;
+  --text: #8a8070;
+  --text-hover: #f0eadc;
+  --border-subtle: rgba(240, 234, 220, 0.04);
+  --overlay-moss: rgba(87, 98, 56, 0.2);
+  --overlay-moss-light: rgba(87, 98, 56, 0.1);
+  --overlay-moss-lighter: rgba(87, 98, 56, 0.06);
+  --scrollbar-bg: #0c0b09;
+  --scrollbar-thumb: #576238;
+  --scrollbar-thumb-hover: #7a8a4e;
+}
 
-html { scroll-behavior: smooth; }
+:root[data-theme="light"] {
+  --bg: #faf8f3;
+  --surface: #f0ede8;
+  --card: #e8e4dd;
+  --moss: #7a8a4e;
+  --moss-light: #9aaa6e;
+  --eggshell: #2d2420;
+  --egg-dim: #4a4038;
+  --slate: #6b5f52;
+  --slate-light: #554a41;
+  --text: #6b5f52;
+  --text-hover: #2d2420;
+  --border-subtle: rgba(45, 36, 32, 0.08);
+  --overlay-moss: rgba(122, 138, 78, 0.15);
+  --overlay-moss-light: rgba(122, 138, 78, 0.08);
+  --overlay-moss-lighter: rgba(122, 138, 78, 0.04);
+  --scrollbar-bg: #faf8f3;
+  --scrollbar-thumb: #9aaa6e;
+  --scrollbar-thumb-hover: #7a8a4e;
+}
+
+/* Default to dark mode */
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background-color: #0c0b09;
-  color: #8a8070;
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* ── Grain overlay ── */
 body::after {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
@@ -29,19 +90,37 @@ body::after {
 }
 
 /* ── Scrollbar ── */
-::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: #0c0b09; }
-::-webkit-scrollbar-thumb { background: #576238; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #7a8a4e; }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
 
 /* ── Selection ── */
-::selection { background: #F0EADC; color: #576238; }
+::selection {
+  background: var(--eggshell);
+  color: var(--moss);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
 
 /* ── Section divider rule ── */
 .section-rule {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, #2a2820 0%, transparent 100%);
+  background: linear-gradient(90deg, var(--surface) 0%, transparent 100%);
+  transition: background 0.3s ease;
 }
 
 /* ── Experience tabs ── */
@@ -51,21 +130,21 @@ body::after {
   text-align: left;
 }
 .exp-tab.active {
-  border-left-color: #7a8a4e;
-  color: #F0EADC;
-  background: rgba(87, 98, 56, 0.1);
+  border-left-color: var(--moss-light);
+  color: var(--eggshell);
+  background: var(--overlay-moss-light);
 }
 .exp-tab:hover:not(.active) {
-  color: #F0EADC;
-  background: rgba(87, 98, 56, 0.06);
-  border-left-color: #576238;
+  color: var(--eggshell);
+  background: var(--overlay-moss-lighter);
+  border-left-color: var(--moss);
 }
 
 /* ── Featured project image overlay ── */
 .fp-img-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(87, 98, 56, 0.2);
+  background: var(--overlay-moss);
   transition: opacity 0.4s ease;
   border-radius: inherit;
 }
@@ -79,13 +158,13 @@ body::after {
   display: inline-block;
 }
 .underline-anim::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 100%;
   height: 1px;
-  background: #7a8a4e;
+  background: var(--moss-light);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -98,9 +177,11 @@ body::after {
 /* ── Project card top-border reveal ── */
 .project-card-border {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #576238, #7a8a4e);
+  background: linear-gradient(90deg, var(--moss), var(--moss-light));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -115,7 +196,7 @@ body::after {
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(87, 98, 56, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--overlay-moss) 0%, transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9997;
