@@ -20,7 +20,9 @@ function useTypewriter(words) {
         setWordIndex((prev) => (prev + 1) % words.length);
         return;
       }
-      setTyped(isDeleting ? typed.slice(0, -1) : target.slice(0, typed.length + 1));
+      setTyped(
+        isDeleting ? typed.slice(0, -1) : target.slice(0, typed.length + 1),
+      );
     }, speed);
 
     return () => clearTimeout(timer);
@@ -38,7 +40,6 @@ const TAGLINES = [
 const STATS = [
   { value: "3+", label: "Years Experience" },
   { value: "15+", label: "Projects Shipped" },
-  { value: "2", label: "Companies" },
 ];
 
 const fade = (delay = 0) => ({
@@ -59,24 +60,28 @@ export default function Hero() {
       <div
         className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 20% 30%, var(--overlay-moss) 0%, transparent 65%)",
+          background:
+            "radial-gradient(circle at 20% 30%, var(--overlay-moss) 0%, transparent 65%)",
         }}
       />
       {/* Ambient glow bottom-right */}
       <div
         className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle at 80% 80%, var(--overlay-moss-light) 0%, transparent 65%)",
+          background:
+            "radial-gradient(circle at 80% 80%, var(--overlay-moss-light) 0%, transparent 65%)",
         }}
       />
 
       <div className="relative max-w-5xl mx-auto w-full px-6 md:px-24">
-
         {/* ── Role badge ── */}
         <motion.div {...fade(0.2)} className="flex items-center gap-3 mb-8">
           <span
             className="font-mono text-[11px] tracking-[3px] uppercase text-moss-light px-3 py-1.5 rounded-full"
-            style={{ border: "1px solid var(--moss-light)", background: "var(--overlay-moss-12)" }}
+            style={{
+              border: "1px solid var(--moss-light)",
+              background: "var(--overlay-moss-12)",
+            }}
           >
             Frontend Developer
           </span>
@@ -89,7 +94,10 @@ export default function Hero() {
         <motion.div {...fade(0.35)} className="mb-2">
           <h1
             className="font-display font-semibold leading-[1.0] tracking-[-3px]"
-            style={{ fontSize: "clamp(48px, 8vw, 100px)", color: "var(--eggshell)" }}
+            style={{
+              fontSize: "clamp(48px, 8vw, 100px)",
+              color: "var(--eggshell)",
+            }}
           >
             Fadogba Oluwaseun.
           </h1>
@@ -102,8 +110,12 @@ export default function Hero() {
             style={{ fontSize: "clamp(18px, 2.8vw, 32px)" }}
           >
             I{" "}
-            <span className="text-moss-light not-italic font-semibold">{typed}</span>
-            <span className="font-mono text-moss-light animate-blink text-[0.85em]">|</span>
+            <span className="text-moss-light not-italic font-semibold">
+              {typed}
+            </span>
+            <span className="font-mono text-moss-light animate-blink text-[0.85em]">
+              |
+            </span>
           </p>
         </motion.div>
 
@@ -113,7 +125,12 @@ export default function Hero() {
           animate={{ scaleX: 1, opacity: 1 }}
           transition={{ delay: 0.7, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="origin-left mb-10"
-          style={{ height: "1px", background: "linear-gradient(90deg, var(--moss-light), transparent)", maxWidth: 480 }}
+          style={{
+            height: "1px",
+            background:
+              "linear-gradient(90deg, var(--moss-light), transparent)",
+            maxWidth: 480,
+          }}
         />
 
         {/* ── Description ── */}
@@ -122,17 +139,25 @@ export default function Hero() {
           className="font-sans text-slate text-[16px] max-w-[460px] leading-[1.85] mb-12"
         >
           Specialising in{" "}
-          <span className="text-eggshell font-medium">React & Next.js</span> — I help
-          product teams and digital creators build scalable, high-performing web
-          applications that convert users and deliver real business results.
+          <span className="text-eggshell font-medium">React & Next.js</span> — I
+          help product teams and digital creators build scalable,
+          high-performing web applications that convert users and deliver real
+          business results.
         </motion.p>
 
         {/* ── CTAs ── */}
-        <motion.div {...fade(0.9)} className="flex items-center gap-5 flex-wrap mb-16">
+        <motion.div
+          {...fade(0.9)}
+          className="flex items-center gap-5 flex-wrap mb-16"
+        >
           <a
             href="#work"
             className="group relative font-mono text-[12px] tracking-[2px] uppercase px-8 py-4 rounded overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
-            style={{ background: "var(--moss)", border: "1px solid var(--moss-light)", color: "#f0eadc" }}
+            style={{
+              background: "var(--moss)",
+              border: "1px solid var(--moss-light)",
+              color: "#f0eadc",
+            }}
           >
             <span className="relative z-10">View My Work</span>
             <span
@@ -145,8 +170,20 @@ export default function Hero() {
             className="font-mono text-[12px] tracking-[2px] uppercase text-egg-dim hover:text-eggshell transition-colors duration-200 flex items-center gap-2"
           >
             Get In Touch
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="transition-transform duration-200 group-hover:translate-x-1">
-              <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            >
+              <path
+                d="M1 7h12M8 2l5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </a>
         </motion.div>
@@ -172,12 +209,14 @@ export default function Hero() {
                 </p>
               </div>
               {i < STATS.length - 1 && (
-                <div className="w-px h-8 self-center" style={{ background: "var(--border-subtle)", opacity: 3 }} />
+                <div
+                  className="w-px h-8 self-center"
+                  style={{ background: "var(--border-subtle)", opacity: 3 }}
+                />
               )}
             </div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
